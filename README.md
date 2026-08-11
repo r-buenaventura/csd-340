@@ -1,2 +1,5 @@
-# csd-340
-Course materials and projects for CSD340-300H Web Development with HTML and CSS.
+# CSD 340 Web Development with HTML and CSS
+
+# Contributors
+- Instructor: Sue Sampson
+- Roxanne Buenaventura
