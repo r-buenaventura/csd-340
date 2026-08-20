@@ -1,0 +1,32 @@
+/* Roxanne Buenaventura
+    CSD 340
+    Assignment 3.2: GitHub Pages
+*/
+
+#container {
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+
+}
+
+h1, h2, h3, h4 {
+    background-color: #F3F0E8;
+    color: #343832;
+    border: 1px solid #D6A800;
+    padding: 10px;
+
+}
+
+a {
+    color: #343832;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #B56F55;
+}
+
+a:visited {
+    color: #7A6F62;
+}
