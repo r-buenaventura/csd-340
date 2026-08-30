@@ -1,5 +1,46 @@
 /* Roxanne Buenaventura
 CSD 340
 Module 4: Assignment 2
-/*
+*/
 
+h1 {
+    text-align: center;
+    color: #002D04;
+}
+
+h3 {
+    text-align: center;
+    color: #002D04;
+}
+
+#image-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 10%;
+}
+
+.image {
+    border: 1px solid #002D04;
+}
+
+figure {
+    text-align: center;
+}
+
+figcaption {
+    text-align: center;
+    font-style: italic;
+    color: #023020;
+    font-size: .75em;
+}
+
+.bottom-div {
+    color: #002D04;
+    float: right;
+    margin-top: 10%;
+    margin-bottom: 20px;
+}
+
+a:visited {
+    color: #002D04;
+}
