@@ -1,0 +1,135 @@
+<!-- Roxanne Buenaventura
+ CSD340
+ October 3, 2026
+ Assignment 10.3: JavaScript Exercise, Part 2 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSD 340 Web Development with HTML and CSS</title>
+
+    <style>
+        body {
+            background-color: #f5eee6;
+            color: #3b2a22;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #5c3d2e;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .drink-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .drink {
+            background-color: #ffffff;
+            width: 350px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(59, 42, 34, 0.15);
+        }
+
+        .drink h3 {
+            color: #5c3d2e;
+            font-size: 1.5rem;
+        }
+
+        .drink img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .drink p {
+            margin-bottom: 0;
+            font-style: italic;
+        }
+    </style>
+
+    <script>
+        function changeCoffee() {
+            const coffeeImage = document.getElementById("coffeeImage");
+
+            if (coffeeImage.src.includes("hot_latte.jpg")) {
+                coffeeImage.src = "iced_latte.jpg";
+                coffeeImage.alt = "Iced latte";
+            } else {
+                coffeeImage.src = "hot_latte.jpg";
+                coffeeImage.alt = "Hot latte with latte art";
+            }
+        }
+
+    function changeMatcha() {
+        const matchaImage = document.getElementById("matchaImage");
+
+        if (matchaImage.src.includes("hot_matcha.jpg")) {
+            matchaImage.src = "iced_matcha.jpg";
+            matchaImage.alt = "Iced matcha drinks";
+        } else {
+            matchaImage.src = "hot_matcha.jpg";
+            matchaImage.alt = "Hot matcha with latte art";
+        }
+}
+
+    </script>
+
+</head>
+
+<body>
+
+    <h1>Assignment 10.3: JavaScript - Part 2</h1>
+
+    <h2>Hot or Iced?</h2>
+
+    <p>
+        Can't decide? Click each drink to switch between hot and iced!
+    </p>
+
+    <div class="drink-container">
+
+        <!-- Coffee Section -->
+        <div class="drink">
+            <h3>Coffee</h3>
+
+            <img id="coffeeImage"
+                src="hot_latte.jpg"
+                alt="Hot latte with latte art"
+                onclick="changeCoffee()">
+
+            <p>Click the drink to switch it up!</p>
+        </div>
+
+        <!-- Matcha Section -->
+        <div class="drink">
+            <h3>Matcha</h3>
+
+            <img id="matchaImage"
+                src="hot_matcha.jpg"
+                alt="Hot matcha with latte art"
+                onclick="changeMatcha()">
+
+            <p>Click the drink to switch it up!</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
