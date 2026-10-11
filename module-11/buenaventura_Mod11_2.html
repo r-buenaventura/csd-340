@@ -1,0 +1,208 @@
+<!-- Roxanne Buenaventura -->
+<!-- CSD 340 -->
+<!-- October 11, 2026 -->
+<!-- Description: An interactive coffee shop opening checklist that allows users to add, delete, display, and sort tasks using JavaScript arrays. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSD 340 Web Development with HTML and CSS</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f7f3ed;
+                color: #3e3028;
+                margin: 0;
+                padding: 40px 20px;
+            }
+
+            h1 {
+                text-align: center;
+                font-size: 24px;
+                margin-bottom: 35px;
+            }
+
+            .checklist-container {
+                background-color: #ffffff;
+                max-width: 650px;
+                margin: 0 auto;
+                padding: 35px;
+                border-radius: 12px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            }
+
+            h2 {
+                color: #526b50;
+                margin-top: 0;
+            }
+
+            .input-section {
+                margin-top: 25px;
+            }
+
+            input {
+                width: 100%;
+                padding: 12px;
+                margin: 10px 0 15px;
+                border: 1px solid #c9c3b8;
+                border-radius: 6px;
+                box-sizing: border-box;
+                font-size: 15px;
+            }
+
+            .button-group {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            button {
+                background-color: #526b50;
+                color: white;
+                border: none;
+                padding: 12px 18px;
+                border-radius: 6px;
+                cursor: pointer;
+                font-size: 14px;
+            }
+
+            button:hover {
+                background-color: #3d523b;
+            }
+
+            h3 {
+                margin-top: 30px;
+                border-bottom: 1px solid #ddd5c9;
+                padding-bottom: 12px;
+            }
+
+            #todoList p {
+                background-color: #f7f3ed;
+                padding: 12px;
+                border-radius: 6px;
+                margin: 8px 0;
+            }
+        </style>
+</head>
+<body>
+    <h1>Assignment 11.2: JavaScript - Part 3</h1>
+
+    <div class="checklist-container">
+
+        <h2>☕ Coffee Shop Opening Checklist</h2>
+
+        <p>
+            Start your morning organized! Add, remove, and
+            sort your opening tasks to prepare the coffee
+            shop for the day.
+        </p>
+
+        <div class="input-section">
+            <label for="todoInput">Enter an opening task:</label>
+
+            <input type="text" id="todoInput"
+                placeholder="e.g., Dial in espresso">
+
+            <div class="button-group">
+                <button onclick="addItem()">Add</button>
+                <button onclick="deleteLastItem()">
+                    Delete Last Entry
+                </button>
+                <button onclick="sortItems()">Sort</button>
+            </div>
+        </div>
+
+        <h3>Opening Tasks</h3>
+
+        <div id="todoList"></div>
+    </div>
+
+    <script>
+        // Creates an empty array to store to-do list items.
+        let todoItems = [];
+
+        // Adds a new item to the to-do list.
+        function addItem() {
+            // Gets the value entered in the text box.
+            let item = document.getElementById("todoInput").value.trim();
+
+            // Checks that the user entered something.
+            if (item !== "") {
+                // Adds the item to the array.
+                todoItems.push(item);
+
+                // Alerts the user about the added item.
+                alert("Added: " + item);
+
+                // Clears the text box.
+                document.getElementById("todoInput").value = "";
+
+                // Updates the displayed list.
+                displayItems();
+            } else {
+                alert("Please enter an item.");
+            }
+        }
+
+        // Displays all tasks currently stored in the array.
+        function displayItems() {
+
+            // Gets the HTML element where tasks will appear.
+            let display = document.getElementById("todoList");
+
+            // Clears the previous list before updating it.
+            display.innerHTML = "";
+
+            // Loops through the array and displays each task.
+            for (let i = 0; i < todoItems.length; i++) {
+
+                // Creates a paragraph for each task.
+                let task = document.createElement("p");
+
+                // Displays the task number and description.
+                task.textContent = (i + 1) + ". " + todoItems[i];
+
+                // Adds the task to the webpage.
+                display.appendChild(task);
+            }
+        }
+
+        // Deletes the last task from the array.
+        function deleteLastItem() {
+
+            // Checks if there are tasks to delete.
+            if (todoItems.length > 0) {
+
+                // Removes and stores the last task.
+                let deletedItem = todoItems.pop();
+
+                // Alerts the user about the deleted task.
+                alert("Deleted: " + deletedItem);
+
+                // Updates the displayed list.
+                displayItems();
+
+            } else {
+                alert("There are no tasks to delete.");
+            }
+        }
+
+
+        // Sorts the opening tasks alphabetically.
+        function sortItems() {
+
+            // Sorts the array in alphabetical order.
+            todoItems.sort();
+
+            // Alerts the user that sorting is complete.
+            alert("Opening tasks have been sorted alphabetically!");
+
+            // Updates the displayed list.
+            displayItems();
+        }
+
+    </script>
+</body>
+</html>
